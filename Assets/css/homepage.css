@@ -1,0 +1,64 @@
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --main-color: #0040ff;
+
+  /* typography */
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  /*========== Font weight */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+}
+
+.header {
+  margin: 0 auto;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+.header__container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  padding: 10px 20px;
+}
+
+/* Logo Styles */
+.header__logo img {
+  width: 100px; /* Set the width of your logo */
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* List Styles */
+.header__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.header__list-item {
+  margin-right: 20px;
+}
+
+.header__list-item:last-child {
+  margin-right: 0;
+}
+
+/* Link Styles */
+.header__list-item a {
+  text-decoration: none;
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-regular);
+}
+.header__list-item:hover a {
+  font-weight: var(--font-semi-bold);
+}
