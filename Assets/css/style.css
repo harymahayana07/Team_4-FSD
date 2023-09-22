@@ -420,3 +420,18 @@ p {
     }
   }
 }
+
+
+
+.footer {
+  align-items: center;
+  text-align: center;
+  padding: 1rem 10%;
+  background: #070348;
+  margin-top: 46rem;
+}
+.footer-text p {
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  color: #f5f5f5;
+}
