@@ -9,7 +9,8 @@ html {
 
 body {
   overflow: hidden;
-  background: var(--white-color) url("../img/bg.jpg") no-repeat center center fixed;
+  background: var(--white-color) url("../img/bg.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   position: fixed;
   padding: 0px;
