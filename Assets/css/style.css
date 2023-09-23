@@ -513,3 +513,20 @@ p {
     }
   }
 }
+
+/* membuat footer = endri */
+
+.footer {
+  align-items: center;
+  text-align: center;
+  padding: 1rem 10%;
+  background: #070348;
+  margin-top: 38rem;
+}
+.footer-text p {
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  color: #f5f5f5;
+}
+
+/* selesai */
