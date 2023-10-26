@@ -1,10 +1,16 @@
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --main-color: #0040ff;
+}
 html {
   height: 100%;
 }
 
 body {
   overflow: hidden;
-  background: #0040ff url("../img/bg.jpg") no-repeat center center fixed;
+  background: var(--white-color) url("../img/bg.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   position: fixed;
   padding: 0px;
@@ -15,6 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* making all element not clickable */
 body:before {
   content: "";
   height: 0px;
@@ -29,8 +36,11 @@ body:before {
   border-radius: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
-  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+  -webkit-animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+      forwards,
+    borderRadius 0.2s 2.3s linear forwards;
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    borderRadius 0.2s 2.3s linear forwards;
 }
 
 h1,
@@ -39,7 +49,6 @@ h2 {
   margin: 0px 0px 5px 0px;
 }
 
-
 h2 {
   font-size: 16px;
 }
@@ -47,9 +56,74 @@ h2 {
 p {
   margin: 0px;
 }
+/* ============================= HEADER ============================== */
+:root {
+  --white-color: #ffffff;
+  --black-color: #000;
+  --main-color: #0040ff;
 
+  /* typography */
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  /*========== Font weight */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+}
+
+.header {
+  margin: 0 auto;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+.header__container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  padding: 10px 20px;
+}
+
+/* Logo Styles */
+.header__logo img {
+  width: 100px; /* Set the width of your logo */
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* List Styles */
+.header__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.header__list-item {
+  margin-right: 20px;
+}
+
+.header__list-item:last-child {
+  margin-right: 0;
+}
+
+/* Link Styles */
+.header__list-item a {
+  text-decoration: none;
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-regular);
+}
+.header__list-item:hover a {
+  font-weight: var(--font-semi-bold);
+}
+/* ================================ END HEADER ================================ */
 .profile-card {
-  background: #FFB300;
+  background: #ffb300;
   width: 56px;
   height: 56px;
   position: absolute;
@@ -63,18 +137,26 @@ p {
   transform: translate(-50%, -50%);
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-  -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+      forwards,
+    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
-.profile-card header {
+.profile-card .profile__container {
   width: 179px;
   height: 280px;
   display: inline-block;
-  border-right: 2px dashed #EEEEEE;
-  background: #FFFFFF;
+  border-right: 2px dashed #eeeeee;
+  background: #ffffff;
   color: #000000;
   margin-top: 90px;
   opacity: 0;
@@ -83,18 +165,18 @@ p {
   animation: moveIn 1s 3.1s ease forwards;
 }
 
-.profile-card header h2 {
+.profile-card .profile__container h2 {
   color: #5032d6;
 }
 
-.profile-card header a {
+.profile-card .profile__container a {
   display: inline-block;
   text-align: center;
   position: relative;
   margin: 25px 30px;
 }
 
-.profile-card header a:after {
+.profile-card .profile__container a:after {
   position: absolute;
   content: "";
   bottom: 3px;
@@ -104,8 +186,19 @@ p {
   border: 4px solid #c8b9b9;
   -webkit-transform: scale(0);
   transform: scale(0);
-  background: -webkit-linear-gradient(top, #ef0909 0%, #ef0909 50%, #ffffff 50%, #ffffff 100%);
-  background: linear-gradient(#ef0909 0%, #ef0909 50%, #ffffff 50%, #ffffff 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #ef0909 0%,
+    #ef0909 50%,
+    #ffffff 50%,
+    #ffffff 100%
+  );
+  background: linear-gradient(
+    #ef0909 0%,
+    #ef0909 50%,
+    #ffffff 50%,
+    #ffffff 100%
+  );
   -webkit-border-radius: 50%;
   border-radius: 50%;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
@@ -114,7 +207,7 @@ p {
   animation: scaleIn 0.3s 3.5s ease forwards;
 }
 
-.profile-card header a > img {
+.profile-card .profile__container a > img {
   width: 120px;
   max-width: 100%;
   -webkit-border-radius: 50%;
@@ -125,7 +218,7 @@ p {
   box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
 }
 
-.profile-card header a:hover > img {
+.profile-card .profile__container a:hover > img {
   -webkit-box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
@@ -226,7 +319,7 @@ p {
 
 @-webkit-keyframes moveUp {
   0% {
-    background: #FFB300;
+    background: #ffb300;
     top: 100%;
   }
   50% {
@@ -234,13 +327,13 @@ p {
   }
   100% {
     top: 50%;
-    background: #E0E0E0;
+    background: #e0e0e0;
   }
 }
 
 @keyframes moveUp {
   0% {
-    background: #FFB300;
+    background: #ffb300;
     top: 100%;
   }
   50% {
@@ -248,13 +341,13 @@ p {
   }
   100% {
     top: 50%;
-    background: #E0E0E0;
+    background: #e0e0e0;
   }
 }
 
 @-webkit-keyframes materia {
   0% {
-    background: #E0E0E0;
+    background: #e0e0e0;
   }
   50% {
     -webkit-border-radius: 4px;
@@ -262,14 +355,14 @@ p {
   100% {
     width: 440px;
     height: 280px;
-    background: #FFFFFF;
+    background: #ffffff;
     -webkit-border-radius: 4px;
   }
 }
 
 @keyframes materia {
   0% {
-    background: #E0E0E0;
+    background: #e0e0e0;
   }
   50% {
     border-radius: 4px;
@@ -277,7 +370,7 @@ p {
   100% {
     width: 440px;
     height: 280px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 4px;
   }
 }
@@ -382,7 +475,7 @@ p {
 }
 
 @media screen and (min-height: 480px) {
-  .profile-card header {
+  .profile-card .profile__container {
     width: auto;
     height: auto;
     padding: 30px 20px;
@@ -390,10 +483,10 @@ p {
     float: none;
     border-right: none;
   }
- 
+
   @-webkit-keyframes materia {
     0% {
-      background: #E0E0E0;
+      background: #e0e0e0;
     }
     50% {
       -webkit-border-radius: 4px;
@@ -401,13 +494,13 @@ p {
     100% {
       width: 280px;
       height: 440px;
-      background: #FFFFFF;
+      background: #ffffff;
       -webkit-border-radius: 4px;
     }
   }
   @keyframes materia {
     0% {
-      background: #E0E0E0;
+      background: #e0e0e0;
     }
     50% {
       border-radius: 4px;
@@ -415,8 +508,25 @@ p {
     100% {
       width: 280px;
       height: 440px;
-      background: #FFFFFF;
+      background: #ffffff;
       border-radius: 4px;
     }
   }
 }
+
+/* membuat footer = endri */
+
+.footer {
+  align-items: center;
+  text-align: center;
+  padding: 1rem 10%;
+  background: #070348;
+  margin-top: 38rem;
+}
+.footer-text p {
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  color: #f5f5f5;
+}
+
+/* selesai */
