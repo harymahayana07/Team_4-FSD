@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Case Zoom in and Zoom out</title>
+  </head>
+  <body>
+    <div
+      id="myElement"
+      style="width: 300px; height: 200px; background-color: lightblue"
+    ></div>
+
+    <button onclick="zoomIn(myElement)">Zoom In</button>
+    <button onclick="zoomOut(myElement)">Zoom Out</button>
+    <button onclick="resetZoom(myElement)">Reset Zoom</button>
+
+    <script>
+      function zoomIn(element) {
+        // Mendapatkan nilai transformasi skala saat ini
+        const currentScale = getComputedStyle(element).transform;
+        // Mengekstrak faktor skala saat ini dari matriks transformasi
+        const currentScaleValue =
+          currentScale === "none"
+            ? 1
+            : parseFloat(currentScale.split("(")[1].split(")")[0]);
+        // Meningkatkan faktor skala sebesar 0.1 (zoom in)
+        const newScale = currentScaleValue + 0.1;
+
+        element.style.transform = `scale(${newScale})`;
+      }
+
+      function zoomOut(element) {
+        // Mendapatkan nilai transformasi skala saat ini
+        const currentScale = getComputedStyle(element).transform;
+        // Mengekstrak faktor skala saat ini dari matriks transformasi
+        const currentScaleValue =
+          currentScale === "none"
+            ? 1
+            : parseFloat(currentScale.split("(")[1].split(")")[0]);
+        // Mengurangi faktor skala sebesar 0.1 (zoom out)
+        const newScale = Math.max(0.1, currentScaleValue - 0.1); // Minimum zoom adalah 0.1
+
+        element.style.transform = `scale(${newScale})`;
+      }
+
+      function resetZoom(element) {
+        // Mengembalikan elemen ke ukuran aslinya (zoom 100%)
+        element.style.transform = "scale(1)";
+      }
+    </script>
+  </body>
+</html>
